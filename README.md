@@ -1,6 +1,6 @@
-# Material Tag Plugin
+# Rivals Mesh Material Manager
 
-An Unreal Engine 5.3 plugin for embedding GameplayTagContainer data per material slot in SkeletalMesh assets. Designed for Marvel Rivals modding in combination with [UAssetToolRivals](https://github.com/XzantGaming/UAssetToolRivals).
+An Unreal Engine 5.3 plugin for managing material data on SkeletalMesh assets: embedding GameplayTagContainer data per material slot, and defining per-LOD default hidden materials. Designed for Marvel Rivals modding in combination with [UAssetToolRivals](https://github.com/XzantGaming/UAssetToolRivals).
 
 ## Overview
 
@@ -13,6 +13,7 @@ Marvel Rivals uses `FGameplayTagContainer` fields in `FSkeletalMaterial` structs
 - **Preset system**: Load tag configurations from INI presets for common mesh types
 - **Drag-and-drop**: Draggable tag pills from presets to material slot entries
 - **Auto-match**: Automatically select presets based on mesh name
+- **Hidden Material Defaults**: Per-LOD, per-material Visible/Hidden toggles that map to the mesh's `DefaultHiddenMaterials` array (false = visible, true = hidden)
 
 ## Installation
 
@@ -27,7 +28,7 @@ Marvel Rivals uses `FGameplayTagContainer` fields in `FSkeletalMaterial` structs
 
 1. Clone this repository into your project's `Plugins/` folder:
    ```
-   git clone https://github.com/YOUR_USERNAME/MaterialTagPlugin.git Plugins/MaterialTagPlugin
+   git clone https://github.com/YOUR_USERNAME/RivalsMeshMaterialManager.git Plugins/RivalsMeshMaterialManager
    ```
 2. Regenerate project files
 3. Build the project
@@ -40,6 +41,17 @@ Marvel Rivals uses `FGameplayTagContainer` fields in `FSkeletalMaterial` structs
 4. Click **Populate From Mesh** to auto-create entries for all material slots
 5. For each slot that needs tags, expand the **GameplayTags** array and add entries
 6. Save the mesh
+
+### Hidden Material Defaults
+
+1. Open your SkeletalMesh asset in the editor
+2. In the Details panel, find the **Asset User Data** array
+3. Click **+** to add a new entry, select **Hidden Material Defaults**
+4. Click **Populate From Mesh** to create one entry per LOD (most meshes only have LOD 0), each containing one button per material slot
+5. Each button reads **Visible** by default; click it to toggle to **Hidden** (false = visible, true = hidden)
+6. Save the mesh
+
+The per-LOD arrays serialize 1:1 with the mesh's `DefaultHiddenMaterials` boolean array and are read by UAssetTool during mod creation.
 
 ### Common Marvel Rivals Material Tags
 
@@ -66,7 +78,7 @@ When you cook your SkeletalMesh asset, the `UMaterialTagAssetUserData` is serial
 2. Reads the slot-tag mappings
 3. Injects tags into each `FSkeletalMaterial::GameplayTagContainer`
 4. Strips the UserData export (game doesn't need it)
-5. Remaps `/Script/MaterialTagPlugin` imports to `/Script/Engine`
+5. Remaps `/Script/RivalsMeshMaterialManager` imports to `/Script/Engine`
 
 ## Requirements
 

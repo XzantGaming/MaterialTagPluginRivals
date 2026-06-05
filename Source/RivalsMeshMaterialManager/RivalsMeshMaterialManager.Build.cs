@@ -1,8 +1,8 @@
 using UnrealBuildTool;
 
-public class MaterialTagPlugin : ModuleRules
+public class RivalsMeshMaterialManager : ModuleRules
 {
-	public MaterialTagPlugin(ReadOnlyTargetRules Target) : base(Target)
+	public RivalsMeshMaterialManager(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
 		

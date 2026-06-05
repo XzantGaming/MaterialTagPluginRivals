@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-    Packages MaterialTagPlugin for GitHub release distribution.
+    Packages RivalsMeshMaterialManager for GitHub release distribution.
 
 .DESCRIPTION
     Creates release ZIP files containing:
@@ -47,21 +47,21 @@ if (-not (Test-Path $OutputDir)) {
 }
 
 Write-Host "========================================" -ForegroundColor Cyan
-Write-Host "MaterialTagPlugin Release Packager" -ForegroundColor Cyan
+Write-Host "RivalsMeshMaterialManager Release Packager" -ForegroundColor Cyan
 Write-Host "Version: $Version" -ForegroundColor Cyan
 Write-Host "========================================" -ForegroundColor Cyan
 Write-Host ""
 
 # Define what to include
 $SourceFiles = @(
-    "MaterialTagPlugin.uplugin",
+    "RivalsMeshMaterialManager.uplugin",
     "README.md",
     "LICENSE",
     "Source"
 )
 
 $BinaryFiles = @(
-    "MaterialTagPlugin.uplugin",
+    "RivalsMeshMaterialManager.uplugin",
     "README.md",
     "LICENSE",
     "Source",
@@ -139,10 +139,10 @@ function New-ReleaseZip {
         [string[]]$Excludes
     )
     
-    $zipName = "MaterialTagPlugin-$Version-$Name.zip"
+    $zipName = "RivalsMeshMaterialManager-$Version-$Name.zip"
     $zipPath = Join-Path $OutputDir $zipName
-    $tempDir = Join-Path $env:TEMP "MaterialTagPlugin_$Name_$(Get-Random)"
-    $packageDir = Join-Path $tempDir "MaterialTagPlugin"
+    $tempDir = Join-Path $env:TEMP "RivalsMeshMaterialManager_$Name_$(Get-Random)"
+    $packageDir = Join-Path $tempDir "RivalsMeshMaterialManager"
     
     Write-Host "Creating $Name distribution..." -ForegroundColor Yellow
     
@@ -176,7 +176,7 @@ function New-ReleaseZip {
 
 # Verify required files exist
 Write-Host "Verifying plugin structure..." -ForegroundColor Yellow
-$requiredFiles = @("MaterialTagPlugin.uplugin", "Source", "README.md", "LICENSE")
+$requiredFiles = @("RivalsMeshMaterialManager.uplugin", "Source", "README.md", "LICENSE")
 foreach ($file in $requiredFiles) {
     $path = Join-Path $PluginRoot $file
     if (-not (Test-Path $path)) {
@@ -206,7 +206,7 @@ Write-Host "Output directory: $OutputDir" -ForegroundColor Cyan
 Write-Host "========================================" -ForegroundColor Cyan
 Write-Host ""
 Write-Host "Release files:" -ForegroundColor Yellow
-Get-ChildItem -Path $OutputDir -Filter "MaterialTagPlugin-$Version-*.zip" | ForEach-Object {
+Get-ChildItem -Path $OutputDir -Filter "RivalsMeshMaterialManager-$Version-*.zip" | ForEach-Object {
     Write-Host "  - $($_.Name)" -ForegroundColor White
 }
 Write-Host ""

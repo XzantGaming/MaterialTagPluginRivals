@@ -342,7 +342,7 @@ TMap<FString, TArray<FString>> FPresetTagDisplayCustomization::GetTagToSlotsMap(
 
 FString FPresetTagDisplayCustomization::GetPresetIniPath()
 {
-	return FPaths::ProjectPluginsDir() / TEXT("MaterialTagPlugin") / TEXT("Config") / TEXT("MaterialTagPresets.ini");
+	return FPaths::ProjectPluginsDir() / TEXT("RivalsMeshMaterialManager") / TEXT("Config") / TEXT("MaterialTagPresets.ini");
 }
 
 #undef LOCTEXT_NAMESPACE
