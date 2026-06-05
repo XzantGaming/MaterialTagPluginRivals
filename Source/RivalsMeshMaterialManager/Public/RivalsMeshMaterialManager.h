@@ -3,7 +3,7 @@
 #include "CoreMinimal.h"
 #include "Modules/ModuleManager.h"
 
-class FMaterialTagPluginModule : public IModuleInterface
+class FRivalsMeshMaterialManagerModule : public IModuleInterface
 {
 public:
 	virtual void StartupModule() override;

@@ -1,9 +1,9 @@
 {
 	"FileVersion": 3,
-	"Version": 1,
-	"VersionName": "1.0",
-	"FriendlyName": "Material Tag Plugin",
-	"Description": "Allows embedding GameplayTagContainer per material slot in combination with UassetTool in SkeletalMesh assets for Marvel Rivals modding",
+	"Version": 2,
+	"VersionName": "1.2.0",
+	"FriendlyName": "Rivals Mesh Material Manager",
+	"Description": "Manages per-material-slot GameplayTags and per-LOD default hidden materials on SkeletalMesh assets (in combination with UAssetTool) for Marvel Rivals modding",
 	"Category": "Modding",
 	"CreatedBy": "Xzant",
 	"CreatedByURL": "",
@@ -15,7 +15,7 @@
 	"Installed": true,
 	"Modules": [
 		{
-			"Name": "MaterialTagPlugin",
+			"Name": "RivalsMeshMaterialManager",
 			"Type": "Runtime",
 			"LoadingPhase": "Default"
 		}

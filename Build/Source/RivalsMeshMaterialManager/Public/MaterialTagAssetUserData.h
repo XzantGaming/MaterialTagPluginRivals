@@ -12,7 +12,7 @@
  * UE cannot merge tags across struct boundaries.
  */
 USTRUCT(BlueprintType)
-struct MATERIALTAGPLUGIN_API FGameplayTagEntry
+struct RIVALSMESHMATERIALMANAGER_API FGameplayTagEntry
 {
 	GENERATED_BODY()
 
@@ -25,7 +25,7 @@ struct MATERIALTAGPLUGIN_API FGameplayTagEntry
  * Has a custom property type customization that renders draggable tag pills.
  */
 USTRUCT(BlueprintType)
-struct MATERIALTAGPLUGIN_API FPresetTagDisplay
+struct RIVALSMESHMATERIALMANAGER_API FPresetTagDisplay
 {
 	GENERATED_BODY()
 
@@ -41,7 +41,7 @@ struct MATERIALTAGPLUGIN_API FPresetTagDisplay
  * automatic tag hierarchy merging.
  */
 USTRUCT(BlueprintType)
-struct MATERIALTAGPLUGIN_API FMaterialSlotTagEntry
+struct RIVALSMESHMATERIALMANAGER_API FMaterialSlotTagEntry
 {
 	GENERATED_BODY()
 
@@ -92,7 +92,7 @@ struct MATERIALTAGPLUGIN_API FMaterialSlotTagEntry
  * - MaterialTag.装备 (Equipment)
  */
 UCLASS(BlueprintType, EditInlineNew, CollapseCategories, meta=(DisplayName="Material Tag Data"))
-class MATERIALTAGPLUGIN_API UMaterialTagAssetUserData : public UAssetUserData
+class RIVALSMESHMATERIALMANAGER_API UMaterialTagAssetUserData : public UAssetUserData
 {
 	GENERATED_BODY()
 
